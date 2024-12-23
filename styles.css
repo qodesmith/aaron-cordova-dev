@@ -1,30 +1,37 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/*************/
+/* TAG NAMES */
+/*************/
+
 html,
 body {
   margin: 0;
   height: 100%;
-  background: #222;
-  color: white;
-  overflow: hidden;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   font-family: monospace;
-  padding: 1ch;
+  background: #222;
+  color: white;
 }
 
 h1 {
   color: #252525;
-  position: absolute;
+  position: fixed;
   margin: 0;
   top: -0.45ch;
   left: -0.5ch;
   font-family: sans-serif;
   font-weight: 900;
   font-size: 20em;
-  z-index: 0;
+  z-index: -1;
   line-height: 0.75;
   user-select: none;
 }
@@ -37,30 +44,6 @@ a:visited {
   &:hover {
     text-decoration: underline;
   }
-}
-
-.container {
-  z-index: 1;
-
-  section {
-    padding-bottom: 1ch;
-  }
-}
-
-.magenta {
-  color: magenta;
-}
-
-.turquoise {
-  color: turquoise;
-}
-
-.mediumpurple {
-  color: mediumpurple;
-}
-
-.gold {
-  color: gold;
 }
 
 ul {
@@ -79,17 +62,50 @@ li {
   }
 }
 
-.flex {
-  display: flex;
+/******************/
+/* ATOMIC CLASSES */
+/******************/
+
+.magenta {
+  color: magenta;
 }
 
-.gap1ch {
-  gap: 1ch;
+.turquoise {
+  color: turquoise;
+}
+
+.mediumpurple {
+  color: mediumpurple;
+}
+
+.gold {
+  color: gold;
 }
 
 .bold {
   font-weight: 900;
 }
+
+/******************/
+/* CUSTOM CLASSES */
+/******************/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5ch;
+  padding: 1em;
+}
+
+.section-with-array,
+.section-array {
+  display: flex;
+  gap: 1ch;
+}
+
+/***********/
+/* TOOLTIP */
+/***********/
 
 .tooltip {
   position: relative;
@@ -123,11 +139,22 @@ li {
   font-weight: 100;
 }
 
-@media only screen and (max-width: 1024px) {
-  ul:before {
-    content: '';
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 8em;
   }
 
+  .tooltip-text {
+    width: calc(100% - 2em);
+    left: 1em;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
   ul,
   section {
     flex-direction: column;
@@ -137,11 +164,16 @@ li {
     padding-left: 2ch;
   }
 
+  .container {
+    gap: 1em;
+  }
+
   .tooltip .item {
     padding-bottom: 0;
   }
 
-  .gap1ch {
+  .section-with-array,
+  .section-array {
     gap: 0;
   }
 }
