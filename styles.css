@@ -162,6 +162,12 @@ li {
 
   li {
     padding-left: 2ch;
+
+    /* Trailing comma for vertical arrays. */
+    &:after {
+      content: ',';
+      color: white;
+    }
   }
 
   .container {
