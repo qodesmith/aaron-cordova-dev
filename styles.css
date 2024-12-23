@@ -1,0 +1,147 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #222;
+  color: white;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  padding: 1ch;
+}
+
+h1 {
+  color: #252525;
+  position: absolute;
+  margin: 0;
+  top: -0.45ch;
+  left: -0.5ch;
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 20em;
+  z-index: 0;
+  line-height: 0.75;
+  user-select: none;
+}
+
+a,
+a:visited {
+  color: cornflowerblue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  z-index: 1;
+
+  section {
+    padding-bottom: 1ch;
+  }
+}
+
+.magenta {
+  color: magenta;
+}
+
+.turquoise {
+  color: turquoise;
+}
+
+.mediumpurple {
+  color: mediumpurple;
+}
+
+.gold {
+  color: gold;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  color: gold;
+
+  &:not(:last-child):after {
+    content: ',';
+    color: white;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.gap1ch {
+  gap: 1ch;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.tooltip {
+  position: relative;
+
+  &:hover {
+    .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .item {
+    border-bottom: 1px dashed;
+    padding-bottom: 0.2em;
+  }
+}
+
+.tooltip-text {
+  width: 320px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  border-radius: 1ch;
+  border: 1px solid #333;
+  padding: 1em;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 1024px) {
+  ul:before {
+    content: '';
+  }
+
+  ul,
+  section {
+    flex-direction: column;
+  }
+
+  li {
+    padding-left: 2ch;
+  }
+
+  .tooltip .item {
+    padding-bottom: 0;
+  }
+
+  .gap1ch {
+    gap: 0;
+  }
+}
