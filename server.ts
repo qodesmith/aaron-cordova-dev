@@ -1,13 +1,13 @@
 const html = await Bun.file('./index.html').text()
 const css = await Bun.file('./styles.css').text()
-const svg = await Bun.file('./curly-brackets.svg').text()
+const svg = await Bun.file('./curly-brackets.png').bytes()
 
 Bun.serve({
   port: Bun.env.SERVER_PORT,
   static: {
     '/': new Response(html),
     '/styles.css': new Response(css),
-    '/curly-brackets.svg': new Response(svg),
+    '/curly-brackets.png': new Response(svg),
   },
   fetch(req) {
     // const url = new URL(req.url)
