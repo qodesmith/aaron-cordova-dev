@@ -1,0 +1,16 @@
+{
+  "name": "aaron-cordova-dev",
+  "module": "server.ts",
+  "type": "module",
+  "scripts": {
+    "docker:build": "docker build -t qodesmith/aaron-cordova-dev:latest --platform=linux/amd64 .",
+    "docker:push": "docker push qodesmith/aaron-cordova-dev:latest",
+    "deploy": "bun run docker:build && bun run docker:push"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
