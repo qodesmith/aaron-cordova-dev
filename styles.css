@@ -116,11 +116,11 @@ li {
       opacity: 1;
     }
   }
+}
 
-  .item {
-    border-bottom: 1px dashed;
-    padding-bottom: 0.2em;
-  }
+.tooltip-item {
+  border-bottom: 1px dashed;
+  padding-bottom: 0.2em;
 }
 
 .tooltip-text {
@@ -137,6 +137,7 @@ li {
   color: white;
   font-family: sans-serif;
   font-weight: 100;
+  z-index: 1;
 }
 
 /*****************/
@@ -174,7 +175,7 @@ li {
     gap: 1em;
   }
 
-  .tooltip .item {
+  .tooltip-item {
     padding-bottom: 0;
   }
 
