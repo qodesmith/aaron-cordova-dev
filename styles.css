@@ -163,8 +163,8 @@ li {
   }
 
   .tooltip-text {
-    width: calc(100% - 2em);
-    left: 1em;
+    width: 100%;
+    left: 0;
   }
 }
 
