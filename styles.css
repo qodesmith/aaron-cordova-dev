@@ -119,8 +119,17 @@ li {
 }
 
 .tooltip-item {
-  border-bottom: 1px dashed;
-  padding-bottom: 0.2em;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.1em);
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dashed;
+  }
 }
 
 .tooltip-text {
@@ -173,10 +182,6 @@ li {
 
   .container {
     gap: 1em;
-  }
-
-  .tooltip-item {
-    padding-bottom: 0;
   }
 
   .section-with-array,
