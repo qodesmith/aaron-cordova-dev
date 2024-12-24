@@ -190,6 +190,10 @@ li {
 
   .section-with-array,
   .section-array {
-    gap: 0;
+    gap: 0.5ch;
+  }
+
+  .tooltip-item:after {
+    top: 100%;
   }
 }
