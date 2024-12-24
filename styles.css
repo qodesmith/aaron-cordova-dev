@@ -133,11 +133,11 @@ li {
 }
 
 .tooltip-text {
+  position: absolute;
   width: 320px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease, visibility 0.2s ease;
-  position: absolute;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(2px);
   border-radius: 1ch;
@@ -147,6 +147,10 @@ li {
   font-family: sans-serif;
   font-weight: 100;
   z-index: 1;
+
+  /* This positions the tooltip on the top by default. */
+  transform: translateY(-100%);
+  top: 0;
 }
 
 /*****************/
